@@ -29,7 +29,12 @@ const criaCard = (produto) => {
     descricao.classList.add('card__description')
     descricao.textContent = produto.description
 
-    card.append(foto, titulo, descricao)
+
+    const price = document.createElement('span')
+    price.classList.add('card__price')
+    price.textContent = 'R$ ' + produto.price.toFixed(2)
+
+    card.append(foto, titulo, descricao,price)
 
     return card
 }
@@ -37,8 +42,10 @@ const criaCard = (produto) => {
 const carregarProdutos = () => {
     const container = document.getElementById('container')
     const cards = produtos.map(criaCard)
-    container.append(...cards)
+    container.replaceChildren(...cards)
    
 }
 
+carregarProdutos()
+carregarProdutos()
 carregarProdutos()
