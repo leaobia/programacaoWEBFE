@@ -9,25 +9,36 @@ use o método pop() .
 Se você deseja adicionar um elemento em uma posição específica do seu array, 
 use o método splice() .*/
 
-const aluno = { nome:"Leonid",nota:'10',aprovado:true }
-const aluno2 = ["Leonid",10,true ]
+import { produtos } from "./produtos.js"
 
-console.log(aluno.nota)
-console.log(aluno2[0])
 
-const ds2t = [
-    {
-        nome: 'Leonid',
-        nota: '10',
-        aprovado:true
-    },
-    {
-        nome: 'Bianca',
-        nota: '8',
-        aprovado:true
-    }
-]
+const criaCard = (produto) => {
 
-// JSON 
+    const card = document.createElement('div')
+    card.classList.add('card')
 
-console.log(ds2t[0].nome)
+    const foto = document.createElement('img')
+    foto.classList.add('card__image')
+    foto.src = `./img/${produto.image}`
+
+    const titulo = document.createElement('h5')
+    titulo.classList.add('card__title')
+    titulo.textContent = produto.name
+
+    const descricao = document.createElement('p')
+    descricao.classList.add('card__description')
+    descricao.textContent = produto.description
+
+    card.append(foto, titulo, descricao)
+
+    return card
+}
+
+const carregarProdutos = () => {
+    const container = document.getElementById('container')
+    const cards = produtos.map(criaCard)
+    container.append(...cards)
+   
+}
+
+carregarProdutos()
