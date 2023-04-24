@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form{
+    height: 50vh;
+    width: 30vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 8px #0009;
+    justify-content: space-evenly;
+}
+
+input{
+    width: 80%;
+}
+
+
+form.reprovado{
+    box-shadow: 4px 4px 8px #f009;
+}
+
+form.aprovado{
+    box-shadow: 4px 4px 8px teal;
+}
