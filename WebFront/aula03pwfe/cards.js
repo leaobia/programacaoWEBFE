@@ -80,7 +80,7 @@
     component() {
 
         const card = document.createElement('card-bibi')
-    card.classList.add('card')
+        card.classList.add('card')
 
         const foto = document.createElement('img')
         foto.classList.add('card__image')

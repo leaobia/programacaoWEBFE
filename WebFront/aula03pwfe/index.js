@@ -11,6 +11,7 @@ use o método splice() .*/
 
 import { produtos } from "./produtos.js"
 import "./cards.js"
+import { cards } from "./cards.js"
 
 const criaCard = (produto) => {
 
@@ -19,14 +20,16 @@ const criaCard = (produto) => {
     card.name = produto.name
     card.description = produto.description
     card.price = produto.price
-    console.log(card)
+   // console.log(produto)
 
 }
 
 const carregarProdutos = () => {
-    const container = document.getElementById('container')
-    const cards = produtos.map(criaCard)
-    container.replaceChildren(...cards)
+    
+  const container = document.getElementById('container')
+  const cards = produtos.map(criaCard)
+
+  container.replaceChildren(...cards)
 }
 
 carregarProdutos()
